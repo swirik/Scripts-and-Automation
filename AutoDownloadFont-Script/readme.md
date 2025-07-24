@@ -44,13 +44,17 @@ Whether to delete ZIP files after installing
 
 An optional manual font URL
 
-📊 Output
+---
+
+## 📊 Output
 At the end of the script, you'll see a summary like:
 
 🎉 Summary: 4 installed, 2 skipped, 1 failed.
 All logs are saved in install_log.txt
 
-🔐 Admin Rights
+---
+
+## 🔐 Admin Rights
 To install fonts system-wide, you’ll need administrator access.
 
 The included .bat file automatically runs the script using UAC elevation:
@@ -58,7 +62,9 @@ The included .bat file automatically runs the script using UAC elevation:
 powershell -Command "Start-Process python -ArgumentList 'install_fonts.py' -Verb RunAs"
 If you only want per-user fonts, you can run install_fonts.py normally.
 
-💡 Tips & Notes
+---
+
+## 💡 Tips & Notes
 Supports both direct .zip and .ttf/.otf font URLs
 
 Handles redirects automatically
@@ -67,7 +73,10 @@ If a font already exists in C:\Windows\Fonts, it will be skipped
 
 Supports Windows only (for now)
 
-📌 Planned Features (Future Ideas)
+
+---
+
+## 📌 Planned Features (Future Ideas)
 Drag-and-drop GUI with Tkinter or PySimpleGUI
 
 Multi-font ZIP folder support
@@ -76,6 +85,8 @@ Cross-platform support (Linux/macOS font paths)
 
 Auto-detect font display names
 
-👨‍💻 Author
+---
+
+## 👨‍💻 Author
 Built by Swirik
 A tool for designers, developers, and font hoarders who want to save time.
