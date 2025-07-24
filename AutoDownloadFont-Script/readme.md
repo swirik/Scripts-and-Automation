@@ -20,34 +20,15 @@ A Python-based tool that automates the downloading, extraction, and installation
 
 ---
 
-## 📁 Project Structure
-
-FontInstaller/
-├── install_fonts.py # Main Python script
-├── install_fonts.bat # One-click Windows launcher (with UAC)
-├── font_links.txt # List of font download URLs
-├── install_log.txt # Auto-generated error log
-└── README.md # Project readme
-
-yaml
-Copy
-Edit
-
----
-
 ## 🚀 How to Use
 
 ### 1. 📦 Install Requirements (first time only)
 Make sure Python is installed, then open a terminal and run:
 
-```bash
 pip install requests tqdm
 2. 📝 Add Font URLs
 Edit font_links.txt and paste one URL per line:
 
-text
-Copy
-Edit
 https://dl.dafont.com/dl/?f=dianora
 https://fontsgeek.com/content/font_download/affair-regular.zip
 You can also enter a URL manually during script execution.
@@ -66,9 +47,6 @@ An optional manual font URL
 📊 Output
 At the end of the script, you'll see a summary like:
 
-css
-Copy
-Edit
 🎉 Summary: 4 installed, 2 skipped, 1 failed.
 All logs are saved in install_log.txt
 
@@ -77,9 +55,6 @@ To install fonts system-wide, you’ll need administrator access.
 
 The included .bat file automatically runs the script using UAC elevation:
 
-bat
-Copy
-Edit
 powershell -Command "Start-Process python -ArgumentList 'install_fonts.py' -Verb RunAs"
 If you only want per-user fonts, you can run install_fonts.py normally.
 
