@@ -89,4 +89,5 @@ Auto-detect font display names
 
 ## 👨‍💻 Author
 Built by Swirik
+
 A tool for designers, developers, and font hoarders who want to save time.
