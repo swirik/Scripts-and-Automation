@@ -66,7 +66,6 @@ To have it run automatically:
 ## 👨‍💻 Author
 
 **Created by Swirik**  
-For designers, developers, and font hoarders who want fonts — fast.
 
 ---
 
