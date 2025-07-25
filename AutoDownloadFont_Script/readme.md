@@ -1,6 +1,6 @@
-# 🗂️ Font Installer — Automated Font Installer for Windows (.EXE Included)
+# 🗂️ Font Installer — Automated Font Installer for Windows
 
-A standalone `.exe` tool that automates the downloading, extraction, and installation of fonts on Windows — from `.zip`, `.ttf`, or `.otf` files via direct URLs or a list. No Python installation required. Just **double-click and install** fonts system-wide or per user.
+An `.exe` tool that automates the downloading, extraction, and installation of fonts on Windows — from `.zip`, `.ttf`, or `.otf` files via direct URLs or a list. No Python installation required. Just **double-click and install** fonts system-wide or per user.
 
 ---
 
