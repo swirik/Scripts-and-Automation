@@ -27,9 +27,13 @@ A standalone `.exe` tool that automates the downloading, extraction, and install
 Download the `.zip` package and extract it to a folder. You should see:
 
 FontInstaller/
+
 ├── FontInstaller.exe # ✅ The one-click executable
+
 ├── font_links.txt # 🔗 Your list of font URLs
+
 ├── install_log.txt # 📄 Log file (created after run)
+
 └── README.md # 📘 This file
 
 ---
