@@ -145,32 +145,43 @@ def main():
     for url in font_urls:
         print(f"\n➡️  Processing: {url}")
         parsed_url = urlparse(url)
-        filename = os.path.basename(parsed_url.path) or "downloaded_file"
+        filename = os.path.basename(parsed_url.path)
+        if not filename or '.' not in filename:
+         filename = "downloaded_file"
+
         target_path = TEMP_DIR / filename
 
+        # Download the file
         if download_file(url, target_path):
-            if is_font_file(target_path):
-                result = install_font_file(target_path, current_user)
-                if result == "installed":
-                    total_installed += 1
-                elif result == "skipped":
-                    total_skipped += 1
-                else:
-                    total_failed += 1
-            elif zipfile.is_zipfile(target_path):
-                i, s, f = process_zip(target_path, current_user)
-                total_installed += i
-                total_skipped += s
-                total_failed += f
-            else:
-                print("❌ Not a font or ZIP file. Skipping.")
-                logging.warning(f"Unsupported file format: {url}")
-
-            if delete_zip:
+            # 🧠 Smart rename based on file header if no extension
+            if not target_path.suffix or target_path.suffix == "":
                 try:
-                    target_path.unlink()
+                    with open(target_path, 'rb') as f:
+                        header = f.read(4)
+
+                    new_path = None
+                    if header[:2] == b'PK':
+                        new_path = target_path.with_suffix('.zip')
+                    elif header[:4] == b'\x00\x01\x00\x00':
+                        new_path = target_path.with_suffix('.ttf')
+                    elif header[:4] == b'OTTO':
+                        new_path = target_path.with_suffix('.otf')
+
+                    if new_path:
+                        os.rename(target_path, new_path)
+                        target_path = new_path
+                    else:
+                        print("❌ Unsupported or unknown file format. Skipping.")
+                        logging.warning(f"Unknown format, skipping: {url}")
+                        continue
+
                 except Exception as e:
-                    logging.error(f"Failed to delete ZIP: {e}")
+                    logging.error(f"Header detection failed: {e}")
+                    continue
+
+
+        
+        
 
     print(f"\n🎉 Summary: {total_installed} installed, {total_skipped} skipped, {total_failed} failed.")
     input("Press Enter to exit...")
