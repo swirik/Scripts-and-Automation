@@ -1,0 +1,3 @@
+[submodule "AutoHotkey"]
+	path = AutoHotkey
+	url = https://github.com/swirik/AutoHotkey-Scripts.git
