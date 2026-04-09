@@ -4,7 +4,7 @@ import datetime
 import subprocess
 import platform
 
-SCREENSHOT_FOLDER = os.path.expanduser("~/Pictures/Screenshots")
+SCREENSHOT_FOLDER = "E:/Resources/10_Screenshots"
 today = datetime.datetime.now().strftime("%Y-%m-%d")
 dest_folder = os.path.join(SCREENSHOT_FOLDER, f"Review_{today}")
 
